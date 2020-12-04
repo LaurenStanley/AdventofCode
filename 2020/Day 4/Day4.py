@@ -79,19 +79,19 @@ def determine_info_validity(passport):
 
 #Determines height field validity by reading units and height value. Throws out readings with non-integers in the value position
 def determine_valid_height(height):
-	valid_height = False
+	is_valid = False
 	units = height[-2:]
 	try:
 		value = int(height[:-2])
 	except ValueError:
-		return valid_height
+		return is_valid
 	if units == 'cm':
 		if 150 <= value <= 193:
-			valid_height = True
+			is_valid = True
 	if units == 'in':
 		if 59 <= value <= 76:
-			valid_height = True
-	return valid_height
+			is_valid = True
+	return is_valid
 
 #Reads the hair color codes
 def determine_valid_hair(hair):
