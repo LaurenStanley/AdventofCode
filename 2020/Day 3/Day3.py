@@ -24,12 +24,7 @@ def ride_tobaggen(map,x_move,y_move):
 	while still_in_map is True:
 		current_row = map[current_y]
 		current_row = current_row[0]
-		#print(current_row)
-		#print(current_x,current_y)
-		#print(len(current_row),len(map))
 		current_location = current_row[current_x]
-		#print(current_row[0:current_x+1])
-		#print(current_row[current_x])
 		if current_location == '#':
 			tree_count += 1
 		current_y += y_move
@@ -37,7 +32,6 @@ def ride_tobaggen(map,x_move,y_move):
 		if current_x > len(current_row)-1:
 			current_x = current_x-len(current_row)
 		if current_y > len(map)-1:
-		#	print(tree_count)
 			still_in_map = False
 	return tree_count
 	
